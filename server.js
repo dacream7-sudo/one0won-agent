@@ -5,7 +5,13 @@ const axios = require('axios');
 const app = express();
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;console.log("==== ENV CHECK START ====");
+console.log("SHOPIFY_STORE raw:", JSON.stringify(process.env.SHOPIFY_STORE));
+console.log("ACCESS_TOKEN raw:", JSON.stringify(process.env.ACCESS_TOKEN));
+console.log("PORT raw:", JSON.stringify(process.env.PORT));
+console.log("All ENV keys:", Object.keys(process.env));
+console.log("==== ENV CHECK END ====");
+
 console.log("==== ENV CHECK START ====");
 console.log("SHOPIFY_STORE raw:", JSON.stringify(process.env.SHOPIFY_STORE));
 console.log("ACCESS_TOKEN raw:", JSON.stringify(process.env.ACCESS_TOKEN));
