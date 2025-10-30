@@ -1,0 +1,6 @@
+one0won-agent/
+├── package.json         ← for dependencies & startup
+├── server.js            ← Express server with / and /test endpoints
+├── .env.example         ← Template for your environment variables
+└── README.md            ← Setup instructions
+
