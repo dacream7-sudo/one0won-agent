@@ -1,6 +1,16 @@
-one0won-agent/
-├── package.json         ← for dependencies & startup
-├── server.js            ← Express server with / and /test endpoints
-├── .env.example         ← Template for your environment variables
-└── README.md            ← Setup instructions
+
+{
+  "name": "one0won-agent",
+  "version": "1.0.0",
+  "description": "Agent app for Shopify store automation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "dotenv": "^16.0.3"
+  }
+}
 
