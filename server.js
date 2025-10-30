@@ -6,6 +6,11 @@ const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
+console.log("==== ENV CHECK START ====");
+console.log("SHOPIFY_STORE raw:", JSON.stringify(process.env.SHOPIFY_STORE));
+console.log("ACCESS_TOKEN raw:", JSON.stringify(process.env.ACCESS_TOKEN));
+console.log("All ENV keys:", Object.keys(process.env));
+console.log("==== ENV CHECK END ====");
 
 // ✅ Root endpoint to confirm the server is alive
 app.get("/", (req, res) => {
