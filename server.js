@@ -7,34 +7,42 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
 
+// ✅ Root endpoint to confirm the server is alive
 app.get("/", (req, res) => {
   res.send("🟢 one0won-agent is running!");
 });
 
+// 🧠 Safe /test endpoint with full error handling
 app.get("/test", async (req, res) => {
   try {
-    const response = await axios.get(
-      `https://${process.env.SHOPIFY_STORE}/admin/api/2024-10/shop.json`,
-      {
-        headers: {
-          "X-Shopify-Access-Token": process.env.ACCESS_TOKEN,
-          "Content-Type": "application/json"
-        }
-      }
-    );
+    const { SHOPIFY_STORE, ACCESS_TOKEN } = process.env;
 
-    res.json({
-      status: "✅ Connected",
-      shop: response.data.shop.name,
-      domain: response.data.shop.myshopify_domain,
-      country: response.data.shop.country_name
-    });
-  } catch (err) {
-    console.error("❌ Shopify connection failed:", err.message);
-    res.status(500).json({ error: err.message });
-  }
+    if (!SHOPIFY_STORE || !ACCESS_TOKEN) {
+      throw new Error("Missing SHOPIFY_STORE or ACCESS_TOKEN environment variable.");
+    }
+
+    const response = awai
+require('dotenv').config();
+const express = require('express');
+const axios = require('axios');
+
+const app = express();
+app.use(express.json());
+
+const PORT = process.env.PORT || 3000;
+
+// ✅ Root endpoint to confirm the server is alive
+app.get("/", (req, res) => {
+  res.send("🟢 one0won-agent is running!");
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// 🧠 Safe /test endpoint with full error handling
+app.get("/test", async (req, res) => {
+  try {
+    const { SHOPIFY_STORE, ACCESS_TOKEN } = process.env;
+
+    if (!SHOPIFY_STORE || !ACCESS_TOKEN) {
+      throw new Error("Missing SHOPIFY_STORE or ACCESS_TOKEN environment variable.");
+    }
+
+    const response = awai
